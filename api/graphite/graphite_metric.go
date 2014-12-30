@@ -34,7 +34,7 @@ func (self *GraphiteMetric) Read(reader *bufio.Reader) error {
 		return fmt.Errorf("Received '%s' which doesn't have three fields", str)
 	}
 	self.name = elements[0]
-        elements[1] = strings.Replace(elements[1],',','.',1)
+        elements[1] = strings.Replace(elements[1],",",".",1)
 
 	self.floatValue, err = strconv.ParseFloat(elements[1], 64)
 	if err != nil {
